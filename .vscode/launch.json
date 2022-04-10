@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: main",
+            "type": "python",
+            "request": "launch",
+            "program": "main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [   "--activation_function", "relu",
+                        "--batch_size", "200" ,
+                        "--criterion","cel",
+                        "--dropout_rate", "0.3",
+                        "--hidden_layer_size", "150",
+                        "--input_size", "784",
+                        "--learning_rate", "1e-3",
+                        "--num_alc", "18",
+                        "--num_classes", "10",
+                        "--num_epochs", "500",
+                        "--num_labeld_samples", "10",
+                        "--num_mc_passes", "10",
+                        "--num_purchases", "5",
+                        "--num_samples", "500",
+                        "--num_test_samples", "500",
+                        "--optimizer", "Adam",
+                        "--output_size", "10",
+                        "--random_seed", "420",
+                        "--test_batch_size", "32",
+                        "--train_batch_size", "32",
+                        "--query_strategy", "softmax"
+                    ]
+        }
+    ]
+}
