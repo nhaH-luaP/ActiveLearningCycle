@@ -25,16 +25,6 @@ class NeuralNetwork(nn.Module):
     def update_dropout_masks(self):
         self.dropout.update_mask()
 
-    def train(self, mode=True):     
-        self.training = mode
-        for module in self.children():
-            module.train(mode)
-        self.dropout.train(mode)
-        return self
-
-    def eval(self):
-        return self.train(False)
-
 
 class MCDropout(nn.Module):
     def __init__(self, p_drop, layer_size):

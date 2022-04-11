@@ -28,11 +28,7 @@ def main(args):
 
     print("Creating/Loading Modelparameters...")
     model = NeuralNetwork(args)
-    if exists(args.path_to_model):
-        params = torch.load(args.path_to_model)
-    else:
-        params = model.state_dict()
-        torch.save(params, args.path_to_model)
+    params = model.parameters()
     
 
     print("Loading and building data...")

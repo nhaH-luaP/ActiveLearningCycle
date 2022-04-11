@@ -42,8 +42,7 @@ srun python /mnt/stud/home/phahn/alc-research/codeV2/main.py \
 	--optimizer "Adam" \
 	--output_size 10 \
 	--path_to_data "./" \
-	--path_to_model "./model_parameters"+$SLURM_ARRAY_TASK_ID+".txt" \
 	--query_strategy "entropy" \
 	--random_seed $SLURM_ARRAY_TASK_ID \
 	--test_batch_size 32 \
-	--train_batch_size 32 \
+	--train_batch_size 32 

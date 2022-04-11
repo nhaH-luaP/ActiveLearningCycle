@@ -2,7 +2,7 @@ import torch
 
 @torch.no_grad()
 def monte_carlo_dropout_pass(model, args, data_loader, device, calibrator):
-    model = model.train().to(device)
+    model = model.eval().to(device)
     predictions = []
     for i in range(args.num_mc_passes):
         model.update_dropout_masks()

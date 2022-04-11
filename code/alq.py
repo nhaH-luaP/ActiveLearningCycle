@@ -17,6 +17,7 @@ class EntropyQuery(ActiveLearningQuery):
 
     def query(self, args, model, unlabeld_data_loader, device, calibrator):
         #Calculating Entropy on unlabeld data pool
+        '''Soll eigentlich unlabeld mean schon übergeben bekommen und damit arbeiten um unabhängig von mc dropout zu sein'''
         unlabeld_mean, _ = monte_carlo_dropout_pass(model, args, unlabeld_data_loader, device, calibrator)
         unlabeld_entropy = -torch.sum(unlabeld_mean*torch.log(unlabeld_mean), dim=1)
         unlabeld_entropy = torch.tensor([0 if torch.isnan(x) else x for x in unlabeld_entropy])
