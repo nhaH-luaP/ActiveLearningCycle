@@ -189,6 +189,7 @@ class PlattBinnerMarginalCalibrator:
             # the data point was actually class c, or not.
             probs_c = probs[:, c]
             labels_c = labels_one_hot[:, c]
+            print(probs_c, labels_c)
             platt_c = utils.get_platt_scaler(probs_c, labels_c)
             self._platts.append(platt_c)
             platt_probs_c = platt_c(probs_c)

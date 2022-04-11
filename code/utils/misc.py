@@ -17,8 +17,8 @@ def flatten_img(x):
 
 def build_dataset(args):
     transform = transforms.Compose([transforms.ToTensor(),transforms.Lambda(flatten_img)])
-    train_dataset = dsets.MNIST(root = './data',train = True,transform = transform,download = True)
+    train_dataset = dsets.MNIST(root = args.path_to_data, train = True,transform = transform,download = True)
     train_dataset, _ = torch.utils.data.random_split(train_dataset, [args.num_samples,60000-args.num_samples])
-    test_dataset = dsets.MNIST(root = './data',train = False ,transform = transform,download = True)
+    test_dataset = dsets.MNIST(root = args.path_to_data, train = False ,transform = transform,download = True)
     test_dataset, _ = torch.utils.data.random_split(test_dataset, [args.num_test_samples,10000-args.num_test_samples])
     return train_dataset, test_dataset

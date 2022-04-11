@@ -8,7 +8,7 @@
             "name": "Python: main",
             "type": "python",
             "request": "launch",
-            "program": "code/main.py",
+            "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [   "--activation_function", "relu",
@@ -32,8 +32,8 @@
                         "--random_seed", "420",
                         "--test_batch_size", "32",
                         "--train_batch_size", "32",
-                        "--query_strategy", "softmax",
-                        "--calibrator", "histogram"
+                        "--query_strategy", "mixed",
+                        "--calibrator", "plattbin"
                     ]
         }
     ]
